@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#41000000"
+    tools:context="com.example.baydin.textscheduler.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <EditText
+            android:id="@+id/recipient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:inputType="phone"
+            android:textColor="#7f01001f"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:imeOptions="actionNext"
+            android:textCursorDrawable="@null"
+            android:hint="@string/recipient_hint"
+            android:ems="10" >
+        </EditText>
+
+        <Button
+            android:id="@+id/edit_scheduled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/recipient"
+            android:text="View Scheduled"
+            android:onClick="startViewScheduleActivity" />
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Send"
+        android:onClick="sendMessage" />
+    
+    <Button
+        android:id="@+id/send_later"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/send"
+        android:text="Send Later"
+        android:onClick="sendMessageLater" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:inputType="textMultiLine"
+        android:textColor="#7f01001f"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:imeOptions="actionNext"
+        android:textCursorDrawable="@null"
+        android:hint="@string/message_hint"
+        android:ems="10" >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/send_later" >
+
+        <Button
+            android:id="@+id/specific_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="Date"
+            android:onClick="showDatePickerDialog" />
+
+        <Button
+            android:id="@+id/specific_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="Time"
+            android:onClick="showTimePickerDialog" />
+
+    </LinearLayout>
+
+</RelativeLayout>

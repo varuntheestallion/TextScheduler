@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TextScheduler</string>
+    <string name="recipient_hint">To</string>
+    <string name="message_hint">Enter message</string>
+</resources>
